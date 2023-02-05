@@ -1,5 +1,7 @@
-[web_servers]
+[workstations]
 bahto@10.8.0.2
+
+[web_servers]
 node1@10.8.0.4
 
 [db_servers]

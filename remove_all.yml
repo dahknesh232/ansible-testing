@@ -14,15 +14,17 @@
   - name: install unzip
     package:
       name: unzip
+      state: absent
+      purge: yes
 
-  - name: install TF
-    unarchive:
-      src: https://releases.hashicorp.com/terraform/1.3.7/terraform_1.3.7_linux_amd64.zip
-      dest: /usr/local/bin
-      remote_src: yes
-      mode: 0755
-      owner: root
-      group: root
+#  - name: install TF
+#    unarchive:
+#      src: https://releases.hashicorp.com/terraform/1.3.7/terraform_1.3.7_linux_amd64.zip
+#      dest: /usr/local/bin
+#      remote_src: yes
+#      mode: 0755
+#      owner: root
+#      group: root
 
 - hosts: web_servers
   become: true
@@ -35,22 +37,17 @@
         - apache2
         - php7.4
         - libapache2-mod-php
-      state: latest
+      state: absent
+      purge: yes
 
-  - name: copy basic phpinfo to server
-    tags: apache2,php
-    copy:
-      src: default_php
-      dest: /var/www/html/index.html
-      owner: root
-      group: root
-      mode: 0644
-
-  - name: Ensure Apache2 is running
-    tags: apache,service
-    service:
-      name: apache2
-      state: started
+#  - name: copy basic phpinfo to server
+#    tags: apache2,php
+#    copy:
+#      src: default_php
+#      dest: /var/www/html/index.php
+#      owner: root
+#      group: root
+#      mode: 0644
 
 - hosts: db_servers
   become: true
@@ -68,7 +65,8 @@
         - php-gd
         - php-json
         - php-curl
-      state: latest
+      state: absent
+      purge: yes
 
 - hosts: file_servers
   become: true
@@ -79,4 +77,5 @@
     package:
       name:
         - glusterfs-server
-      state: latest
+      state: absent
+      purge: yes
