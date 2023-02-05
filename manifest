@@ -1,6 +1,11 @@
-bahto@10.8.0.2 apache_package=apahe2 php_package=php7.4
-node1@10.8.0.4 apache_package=apahe2 php_package=php7.4
-node2@10.8.0.5 apache_package=apahe2 php_package=php7.4
-node3@10.8.0.6 apache_package=apahe2 php_package=php7.4
-node4@10.8.0.7 apache_package=apahe2 php_package=php7.4
+[web_servers]
+bahto@10.8.0.2
+node1@10.8.0.4
+
+[db_servers]
+node2@10.8.0.5
+
+[file_servers]
+node3@10.8.0.6
+node4@10.8.0.7
 

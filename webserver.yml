@@ -1,13 +1,44 @@
 ---
-
 - hosts: all
+  become: true
+  pre_tasks:
+
+  - name: Update Repos
+    package:
+      update_cache: yes
+
+- hosts: web_servers
   become: true
   tasks:
 
   - name: Install Apache2
     package:
       name:
-        - "{{ apache_package }}"
-        - "{{ php_package }}"
+        - apache2
+        - php7.4
       state: latest
-      update_cache: yes
+
+- hosts: db_servers
+  become: true
+  tasks:
+
+  - name: Install MariaDB and PHPMyAdmin
+    package:
+      name:
+        - mariadb-server
+        - phpmyadmin
+        - php-mbstring
+        - php-zip
+        - php-gd
+        - php-json
+        - php-curl
+      state: latest
+
+- hosts: file_servers
+  become: true
+  tasks:
+  - name: Install GlusterFS
+    package:
+      name:
+        - glusterfs-server
+      state: latest
