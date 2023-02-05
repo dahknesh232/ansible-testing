@@ -1,0 +1,13 @@
+[workstations]
+bahto@10.8.0.2
+
+[web_servers]
+node1@10.8.0.4
+
+[db_servers]
+node2@10.8.0.5
+
+[file_servers]
+node3@10.8.0.6
+node4@10.8.0.7
+
