@@ -5,11 +5,9 @@
   tasks:
 
   - name: Install Apache2
-    apt:
-      name: 
-        - apache2
-        - libapache2-mod-php
-        - php7.4
-        - docker
+    package:
+      name:
+        - "{{ apache_package }}"
+        - "{{ php_package }}"
       state: latest
       update_cache: yes
