@@ -10,15 +10,9 @@
 
   - name: Install Apache2
     apt:
-      name: apache2
-      state: latest
-
-  - name: Add PHP Extension for Apache
-    apt:
-      name: libapache2-mod-php
-      state: latest
-
-  - name: Add PHP7.4
-    apt:
-      name: php7.4
+      name: 
+        - apache2
+        - libapache2-mod-php
+        - php7.4
+        - docker
       state: latest
