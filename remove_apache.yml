@@ -9,3 +9,15 @@
       name: apache2
       state: absent
       purge: yes
+
+  - name: Autoclean
+    apt:
+      autoremove: true
+      autoclean: true
+
+  - name: Delete content & directory
+    file:
+      state: absent
+      path: /etc/apache2/
+
+

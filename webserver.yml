@@ -7,19 +7,18 @@
   - name: Update Repos
     apt:
       update_cache: yes
-    when: ansible_distribution == "Ubuntu"
 
   - name: Install Apache2
     apt:
       name: apache2
-    when: ansible_distribution == "Ubuntu"
+      state: latest
 
   - name: Add PHP Extension for Apache
     apt:
       name: libapache2-mod-php
-    when: ansible_distribution == "Ubuntu"
+      state: latest
 
   - name: Add PHP7.4
     apt:
       name: php7.4
-    when: ansible_distribution == "Ubuntu"
+      state: latest
