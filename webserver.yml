@@ -1,0 +1,21 @@
+---
+
+- hosts: all
+  become: true
+  tasks:
+
+  - name: Update Repos
+    apt:
+      update_cache: yes
+
+  - name: Install Apache2
+    apt:
+      name: apache2
+
+  - name: Add PHP Extension for Apache
+    apt:
+      name: libapache2-mod-php
+
+  - name: Add PHP7.4
+    apt:
+      name: php7.4

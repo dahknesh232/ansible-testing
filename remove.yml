@@ -1,0 +1,15 @@
+---
+
+- hosts: all
+  become: true
+  tasks:
+
+  - name: Uninitiate Swarm
+    docker_swarm:
+      state: absent
+      force: yes
+
+  - name: Uninstall Docker
+    apt:
+      state: absent
+      purge: yes
