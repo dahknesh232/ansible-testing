@@ -28,6 +28,54 @@
   become: true
   tasks:
 
+  - name: create dev user
+    tags: always
+    user:
+      name: dev
+      groups: root
+
+  - name: add ssh key for dev
+    tags: always
+    authorized_key:
+      user: dev
+      key: ""
+
+- hosts: db_servers
+  become: true
+  tasks:
+
+  - name: create dev user
+    tags: always
+    user:
+      name: dev
+      groups: root
+
+  - name: add ssh key for dev
+    tags: always
+    authorized_key:
+      user: dev
+      key: ""
+
+- hosts: file_servers
+  become: true
+  tasks:
+
+  - name: create dev user
+    tags: always
+    user:
+      name: dev
+      groups: root
+
+  - name: add ssh key for dev
+    tags: always
+    authorized_key:
+      user: dev
+      key: ""
+
+- hosts: web_servers
+  become: true
+  tasks:
+
   - name: Install Apache2
     tags: apache2,php
     package:
