@@ -41,6 +41,7 @@
         - php-mbstring
         - php-xml
       state: latest
+    register: apache
 
   - name: copy basic phpinfo to server
     tags: apache2,php
@@ -50,6 +51,7 @@
       owner: root
       group: root
       mode: 0644
+    register: apache
 
   - name: copy basic html to server
     tags: apache2,html
@@ -59,11 +61,40 @@
      owner: root
      group: root
      mode: 0644
+    register: apache
+
+  - name: copy basic html to server
+    tags: apache2,html
+    copy:
+     src: metrics_php
+     dest: /var/www/html/metrics.php
+     owner: root
+     group: root
+     mode: 0644
+    register: apache
+
+  - name: copy current facts to server
+    tags: apache2,html
+    copy:
+     src: facts
+     dest: /var/www/html/js/facts.json
+     owner: root
+     group: root
+     mode: 0644
+    register: apache
+
   - name: Ensure Apache2 is running
     tags: apache,service
     service:
       name: apache2
       state: started
+
+  - name: update apache changes
+    tags: apache,webmmaster
+    service:
+      name: apache2
+      state: restarted
+    when:  apache.changed
 
 - hosts: db_servers
   become: true

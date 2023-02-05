@@ -4,5 +4,6 @@
 <h1>Asnible Testing</h1>
 <p>is going well?</p>
 <p><a href="phpinfo.php">Click Here for PHP Info</a></p>
+<p><a href="metrics.php">Mertics Will Go Here</a></p>
 </body>
 </html>

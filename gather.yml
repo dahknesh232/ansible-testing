@@ -1,0 +1,12 @@
+---
+- hosts: workstations
+  become: true
+  tasks:
+  - name: Play to get the gathre facts content
+    debug:
+     var: ansible_facts
+  - name: Copy ansible facts to a file.
+    copy:
+     content: "{{ ansible_facts }}"
+     dest: /home/dev/ansible-testing/files/facts
+    delegate_to: localhost
