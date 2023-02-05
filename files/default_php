@@ -1,6 +1,1 @@
-<html>
-<title>Do Ansible Stuff</title>
-<body>
 <?php phpinfo(); ?>
-<body>
-</html>

@@ -34,18 +34,31 @@
       name:
         - apache2
         - php7.4
-        - libapache2-mod-php
+        - libapache2-mod-php7.4
+        - php-curl
+        - php-gd
+        - php-json
+        - php-mbstring
+        - php-xml
       state: latest
 
   - name: copy basic phpinfo to server
     tags: apache2,php
     copy:
       src: default_php
-      dest: /var/www/html/index.html
+      dest: /var/www/html/phpinfo.php
       owner: root
       group: root
       mode: 0644
 
+  - name: copy basic html to server
+    tags: apache2,html
+    copy:
+     src: default_html
+     dest: /var/www/html/index.html
+     owner: root
+     group: root
+     mode: 0644
   - name: Ensure Apache2 is running
     tags: apache,service
     service:
