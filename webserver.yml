@@ -4,10 +4,6 @@
   become: true
   tasks:
 
-  - name: Update Repos
-    apt:
-      update_cache: yes
-
   - name: Install Apache2
     apt:
       name: 
@@ -16,3 +12,4 @@
         - php7.4
         - docker
       state: latest
+      update_cache: yes
