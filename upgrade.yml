@@ -1,0 +1,13 @@
+---
+
+- hosts: all
+  become: true
+  tasks:
+
+  - name: Update Repos
+    apt:
+      update_cache: yes
+
+  - name: Upgrade Dist
+    apt:
+      upgrade: dist
