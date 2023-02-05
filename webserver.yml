@@ -12,20 +12,33 @@
   tasks:
 
   - name: Install Apache2
+    tags: apache2,php
     package:
       name:
         - apache2
         - php7.4
+        - libapache2-mod-php
       state: latest
+
+  - name: copy basic phpinfo to server
+    tags: apache2,php
+    copy:
+      src: default_php
+      dest: /var/www/html/index.php
+      owner: root
+      group: root
+      mode: 0644
 
 - hosts: db_servers
   become: true
   tasks:
 
   - name: Install MariaDB and PHPMyAdmin
+    tags: db,mariadb,phpmyadmin
     package:
       name:
         - mariadb-server
+        - php7.4
         - phpmyadmin
         - php-mbstring
         - php-zip
@@ -38,6 +51,7 @@
   become: true
   tasks:
   - name: Install GlusterFS
+    tags: file,gluster
     package:
       name:
         - glusterfs-server
