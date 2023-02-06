@@ -1,0 +1,83 @@
+---
+- hosts: all
+  become: true
+  pre_tasks:
+
+  - name: Update Repos
+    package:
+      update_cache: yes
+
+- hosts: web_servers
+  become: true
+  tasks:
+
+  - name: create dev user
+    tags: always
+    user:
+      name: dev
+      groups: root
+
+  - name: add ssh key for dev
+    tags: always
+    authorized_key:
+      user: dev
+      key: ""
+
+  - name: add sudoers file for dev
+    tags: always
+    copy:
+      src: sudoer_dev
+      dest: /etc/sudoers.d/dev
+      owner: root
+      group: root
+      mode: 0440
+
+- hosts: db_servers
+  become: true
+  tasks:
+
+  - name: create dev user
+    tags: always
+    user:
+      name: dev
+      groups: root
+
+  - name: add ssh key for dev
+    tags: always
+    authorized_key:
+      user: dev
+      key: ""
+
+  - name: add sudoers file for dev
+    tags: always
+    copy:
+      src: sudoer_dev
+      dest: /etc/sudoers.d/dev
+      owner: root
+      group: root
+      mode: 0440
+
+- hosts: file_servers
+  become: true
+  tasks:
+
+  - name: create dev user
+    tags: always
+    user:
+      name: dev
+      groups: root
+
+  - name: add ssh key for dev
+    tags: always
+    authorized_key:
+      user: dev
+      key: ""
+
+  - name: add sudoers file for dev
+    tags: always
+    copy:
+      src: sudoer_dev
+      dest: /etc/sudoers.d/dev
+      owner: root
+      group: root
+      mode: 0440
