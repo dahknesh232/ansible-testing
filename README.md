@@ -123,5 +123,4 @@ Please make sure to update tests as appropriate.
 
 ## License
 
-[GNU GPL](https://www.gnu.org/licenses/gpl-3.0.html)# ansible-testing
-testing ansible for CloudOps Position
+[GNU GPL](https://www.gnu.org/licenses/gpl-3.0.html)
