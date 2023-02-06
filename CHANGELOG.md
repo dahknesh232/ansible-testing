@@ -1,3 +1,13 @@
+#### commit: 8e62abbf7aa856b87b575f95ff7d5d72a791c4e1 
+##### Dahknesh232 <soundlifeenterprisesllc@gmail.com> 
+Date: Sun, 5 Feb 2023 20:33:55 -0500 
+
+ Fixed Readme - removed inital commit data
+#### commit: 981446446261b64967dd471bdbf18725f261dfec 
+##### Dahknesh232 <soundlifeenterprisesllc@gmail.com> 
+Date: Sun, 5 Feb 2023 20:25:41 -0500 
+
+ fixed Changelog again
 #### commit: c02478372a463396626f7dab831eb64e7ea972bc 
 ##### Dahknesh232 <soundlifeenterprisesllc@gmail.com> 
 Date: Sun, 5 Feb 2023 20:24:13 -0500 
