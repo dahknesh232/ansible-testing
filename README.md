@@ -28,12 +28,12 @@ Change listed IP addresses to your server IPS
 If you have not created an ssh key do the following:
 ```bash
 ssh-keygen -t ed25519
-Generating public/private ed25519 key pair.
 ```
 
 
 You will see the following prompts, input your desired path to ssh keys, and for password-less deployment, hit enter for passphrase:
 ```bash
+Generating public/private ed25519 key pair.
 Enter file in which to save the key (/home/$USER/.ssh/id_ed25519): /path/to/ssh/directory/ansi-key
 Enter passphrase (empty for no passphrase): 
 Enter same passphrase again: 
