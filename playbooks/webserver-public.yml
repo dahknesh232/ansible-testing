@@ -38,7 +38,16 @@
     tags: always
     authorized_key:
       user: dev
-      key: ""
+      key: "your-ssh-key"
+
+  - name: add sudoers file for dev
+    tags: always
+    copy:
+      src: sudoer_dev
+      dest: /etc/sudoers.d/dev
+      owner: root
+      group: root
+      mode: 0440
 
 - hosts: db_servers
   become: true
@@ -54,7 +63,16 @@
     tags: always
     authorized_key:
       user: dev
-      key: ""
+      key: "your-ssh-key"
+
+  - name: add sudoers file for dev
+    tags: always
+    copy:
+      src: sudoer_dev
+      dest: /etc/sudoers.d/dev
+      owner: root
+      group: root
+      mode: 0440
 
 - hosts: file_servers
   become: true
@@ -70,7 +88,16 @@
     tags: always
     authorized_key:
       user: dev
-      key: ""
+      key: "your-ssh-key"
+
+  - name: add sudoers file for dev
+    tags: always
+    copy:
+      src: sudoer_dev
+      dest: /etc/sudoers.d/dev
+      owner: root
+      group: root
+      mode: 0440
 
 - hosts: web_servers
   become: true
