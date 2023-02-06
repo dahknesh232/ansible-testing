@@ -8,5 +8,5 @@
   - name: Copy ansible facts to a file.
     copy:
      content: "{{ ansible_facts }}"
-     dest: /home/dev/ansible-testing/playbooks/files/facts
+     dest: /home/dev/ansible-testing/playbooks/roles/wbsrv/files/facts
     delegate_to: localhost

@@ -1,0 +1,6 @@
+- name: Install GlusterFS
+  tags: file,gluster
+  package:
+    name:
+      - glusterfs-server
+    state: latest

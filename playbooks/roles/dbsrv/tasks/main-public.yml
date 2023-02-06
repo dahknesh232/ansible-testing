@@ -1,0 +1,13 @@
+- name: Install MariaDB and PHPMyAdmin
+  tags: db,mariadb,phpmyadmin
+  package:
+    name:
+      - mariadb-server
+      - php7.4
+      - phpmyadmin
+      - php-mbstring
+      - php-zip
+      - php-gd
+      - php-json
+      - php-curl
+    state: latest

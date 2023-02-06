@@ -2,6 +2,9 @@
 
 This is a simple repo for ansible testing.
 
+# Roles
+*Roles are NOT included in this README.md*
+
 # Installation
 
 Assuming you have Ubuntu 20.04 installed across 5 servers- you can copy this repo to deploy playbooks from the `playbooks` directory.

@@ -1,0 +1,5 @@
+- name: add ssh key for dev
+    tags: always
+    authorized_key:
+      user: dev
+      key: ""
