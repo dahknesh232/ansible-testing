@@ -1,0 +1,5 @@
+- name: update apache changes
+  tags: apache,webmmaster
+  service:
+    name: apache2
+    state: restarted

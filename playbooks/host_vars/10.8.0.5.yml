@@ -1,0 +1,8 @@
+mdb: mariadb-server
+php: php7.4
+pma: phpmyadmin
+mbs: php-mbstring
+pz: php-zip
+gd: php-gd
+json: php-json
+curl: php-curl

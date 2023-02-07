@@ -1,0 +1,10 @@
+apac: apache2
+apac_srv: apache2
+apac_php: libapache2-mod-php7.4
+php: php7.4
+curl: php-curl
+gd: php-gd
+json: php-json
+mbs: php-mbstring
+xml: php-xml
+
