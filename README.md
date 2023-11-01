@@ -57,7 +57,7 @@ SHA256:<cool gibberish>
 +----[SHA256]-----+
 ```
 ## COPY PUBLIC SSH KEY TO `bootstrap.yml`
-The `.pub` is important, be sure you are copying the public key ad not the private key
+The `.pub` is important, be sure you are copying the public key and not the private key
 ```bash
 cat /path/to/ssh/keys/ansi-key.pub
 ```

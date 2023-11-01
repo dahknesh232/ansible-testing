@@ -1,5 +1,5 @@
 ---
-- hosts: workstations
+- hosts: wrkst
   become: true
   tasks:
   - name: Play to get the gathre facts content
